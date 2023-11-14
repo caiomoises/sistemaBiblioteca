@@ -5,5 +5,6 @@ from .models import *
 class clienteAdmin(admin.ModelAdmin):
     list_display = 'Nome', 'CPF', 'Contato'
     list_filter = ('Nome', 'CPF')
+    search_fields = 'Nome', 'CPF', 'Contato'
 
     
