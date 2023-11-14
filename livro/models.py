@@ -26,7 +26,7 @@ class livro(models.Model):
     Editora = models.CharField(max_length=50, blank=False, default='')
     Idioma = models.CharField(max_length=2, choices=idiomas, default='pt')
     Codigo = models.CharField(max_length=50, blank=False, default='')
-    Publicação = models.DateField(blank=False, choices=ano_publica, default='2023')
+    Publicação = models.IntegerField(choices=ano_publica, default='2023') 
     Edição = models.CharField(max_length=5, blank=False, default='')
     Quantidade = models.IntegerField(blank=False) 
 

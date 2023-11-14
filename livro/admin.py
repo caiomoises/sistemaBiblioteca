@@ -3,4 +3,4 @@ from .models import *
 
 @admin.register(livro)
 class livroAdmin(admin.ModelAdmin):
-    list_display = ('Nome',)
+    list_display = ('Nome', 'Idioma', 'Codigo', 'Edição', 'Quantidade')
