@@ -21,7 +21,7 @@ class livro(models.Model):
 
     ano_publica = [(ano, str(ano)) for ano in range(1500, 2024)]
 
-    Nome = models.CharField(max_length=150, blank=False)
+    Nome = models.CharField(max_length=50, blank=False)
     Editora = models.CharField(max_length=50, blank=False, default='')
     Idioma = models.CharField(max_length=2, choices=idiomas, default='pt')
     Codigo = models.CharField(max_length=50, blank=False, default='')
