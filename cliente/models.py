@@ -57,12 +57,5 @@ class cliente(models.Model):
     contato = models.CharField(max_length=50, null=True, blank=False, validators=[valida_contato])
     logradouro = models.CharField(max_length=60, null=True, blank=False)
 
-    def livros_pegos():
-        from emprestimo.models import livros_emprestado
-        
-        emprestimos_cliente = livros_emprestado
-
-        return emprestimos_cliente
-
     def __str__(self) -> str:
         return self.nome
