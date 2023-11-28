@@ -52,10 +52,17 @@ def valida_contato(value):
             raise ValidationError('Número de celular inválido.')
 
 class cliente(models.Model):
-    Nome = models.CharField(max_length=50, blank=False)
-    CPF = models.CharField(max_length=11, unique=True, validators=[RegexValidator(r'^\d{11}$', 'CPF deve conter apenas números.'), valida_CPF])
-    Contato = models.CharField(max_length=50, null=True, blank=False, validators=[valida_contato])
-    Logradouro = models.CharField(max_length=60, null=True, blank=False)
+    nome = models.CharField(max_length=50, blank=False)
+    cpf = models.CharField(max_length=11, unique=True, validators=[RegexValidator(r'^\d{11}$', 'CPF deve conter apenas números.'), valida_CPF])
+    contato = models.CharField(max_length=50, null=True, blank=False, validators=[valida_contato])
+    logradouro = models.CharField(max_length=60, null=True, blank=False)
+
+    def livros_pegos():
+        from emprestimo.models import livros_emprestado
+        
+        emprestimos_cliente = livros_emprestado
+
+        return emprestimos_cliente
 
     def __str__(self) -> str:
-        return self.Nome
+        return self.nome

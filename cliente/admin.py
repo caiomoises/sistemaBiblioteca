@@ -3,8 +3,8 @@ from .models import *
 
 @admin.register(cliente)
 class clienteAdmin(admin.ModelAdmin):
-    list_display = 'Nome', 'CPF', 'Contato'
-    list_filter = ('Nome', 'CPF')
-    search_fields = 'Nome', 'CPF', 'Contato'
+    list_display = 'nome', 'cpf', 'contato', 
+    list_filter = ('nome', 'cpf')
+    search_fields = 'nome', 'cpf', 'contato'
 
     
