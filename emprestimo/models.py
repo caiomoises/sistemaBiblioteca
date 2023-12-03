@@ -7,8 +7,8 @@ from django.core.exceptions import ValidationError
 class emprestimo(models.Model):
     livro_emprestado = models.ForeignKey(livro, on_delete=models.CASCADE)
     cliente = models.ForeignKey(cliente, on_delete=models.CASCADE)
-    data_emprestimo = models.DateField()
-    devolucao = models.DateField(default=datetime.now().date() + timedelta(days=15))
+    data_emprestimo = models.DateField(default=datetime.now().date(), editable=False)
+    devolucao = models.DateField(default=datetime.now().date() + timedelta(days=15), editable=False)
 
     def __str__(self) -> str:
         return f"{self.livro_emprestado.nome} - Emprestado para: {self.cliente.nome}"
